@@ -97,7 +97,7 @@ const Projects = () => {
                 cover={
                   <img
                     alt={project.title}
-                    src={project.image}
+                    src="ojt-project-login.jpg"
                     className="h-48 object-cover"
                   />
                 }
