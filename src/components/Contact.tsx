@@ -27,7 +27,7 @@ const Contact = () => {
     {
       icon: <EnvironmentOutlined className="text-2xl text-teal-400" />,
       title: "Location",
-      value: "San Francisco, CA",
+      value: "Tacloban City, Philippines",
       link: "#",
     },
   ];
