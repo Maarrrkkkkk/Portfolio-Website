@@ -28,7 +28,7 @@ const Footer = () => {
     },
     {
       icon: <MailOutlined className="text-xl" />,
-      href: "mailto:john@example.com",
+      href: "#",
       label: "Email",
     },
   ];
