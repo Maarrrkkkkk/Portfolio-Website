@@ -10,7 +10,7 @@ const Projects = () => {
       title: "Online Academic Archive and Yearbook System",
       description:
         "A university-exclusive system for managing theses, dissertations, and re-entry papers. Features include uploads by students/admins, citation counters, and audit logging.",
-      image: "/academic-archive.svg",
+      image: "/academic-archieve.jpg",
       technologies: [
         {
           name: "Django",
@@ -38,7 +38,7 @@ const Projects = () => {
       title: "Capstone Management System",
       description:
         "A web-based system developed for EVSU’s IT Department to enhance the management of undergraduate capstone projects. Features include intelligent adviser recommendations using content-based filtering, automated grading for consistent evaluations, and optimized scheduling of hearings and panels using constraint-solving and heuristic algorithms. The platform improves efficiency, fairness, and overall project guidance quality.",
-      image: "/capstone-system.svg",
+      image: "/capstone-project.jpg",
       technologies: [
         {
           name: "Django",
@@ -97,7 +97,7 @@ const Projects = () => {
                 cover={
                   <img
                     alt={project.title}
-                    src="ojt-project-login.jpg"
+                    src={project.image}
                     className="h-48 object-cover"
                   />
                 }
