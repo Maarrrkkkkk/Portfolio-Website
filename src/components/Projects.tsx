@@ -1,8 +1,34 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { Card, Typography, Tag } from "antd";
 
 const { Title, Paragraph } = Typography;
 const { Meta } = Card;
+
+// 🔽 Inline See More / See Less Component
+const ProjectDescription = ({ description }: { description: string }) => {
+  const [expanded, setExpanded] = useState(false);
+  const charLimit = 130;
+
+  const isLong = description.length > charLimit;
+  const displayText = expanded
+    ? description
+    : description.slice(0, charLimit).trim() + (isLong ? "..." : "");
+
+  return (
+    <Paragraph className="text-gray-300 mb-1">
+      {displayText}
+      {isLong && (
+        <span
+          onClick={() => setExpanded(!expanded)}
+          className="text-emerald-400 cursor-pointer hover:underline ml-1"
+        >
+          {expanded ? "See less" : "See more"}
+        </span>
+      )}
+    </Paragraph>
+  );
+};
 
 const Projects = () => {
   const projects = [
@@ -108,9 +134,8 @@ const Projects = () => {
                   }
                   description={
                     <>
-                      <Paragraph className="text-gray-300 mb-3">
-                        {project.description}
-                      </Paragraph>
+                      <ProjectDescription description={project.description} />
+
                       <div className="flex flex-wrap gap-2 mt-auto">
                         {project.technologies.map((tech) => (
                           <Tag

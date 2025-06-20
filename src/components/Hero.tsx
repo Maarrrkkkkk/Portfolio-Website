@@ -57,7 +57,7 @@ const Hero = () => {
             />
           </motion.div>
           <Title
-            level={1}
+            level={2}
             className="text-3xl md:text-5xl lg:text-7xl font-bold mb-6 bg-gradient-to-r from-emerald-400 via-cyan-400 to-emerald-500 bg-clip-text text-transparent font-poppins"
           >
             Mark Anthony Aguirre

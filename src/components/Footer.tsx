@@ -3,8 +3,8 @@ import { Typography, Button } from "antd";
 import {
   GithubOutlined,
   LinkedinOutlined,
-  TwitterOutlined,
-  MailOutlined,
+  FacebookOutlined,
+  TikTokFilled,
 } from "@ant-design/icons";
 
 const { Title, Paragraph } = Typography;
@@ -13,23 +13,23 @@ const Footer = () => {
   const socialLinks = [
     {
       icon: <GithubOutlined className="text-xl" />,
-      href: "#",
+      href: "https://github.com/Maarrrkkkkk",
       label: "GitHub",
     },
     {
       icon: <LinkedinOutlined className="text-xl" />,
-      href: "#",
+      href: "https://www.linkedin.com/in/mark-anthony-aguirre",
       label: "LinkedIn",
     },
     {
-      icon: <TwitterOutlined className="text-xl" />,
-      href: "#",
-      label: "Twitter",
+      icon: <FacebookOutlined className="text-xl" />,
+      href: "https://www.facebook.com/markanthony.aguirre.501/", // replace with your actual FB URL
+      label: "Facebook",
     },
     {
-      icon: <MailOutlined className="text-xl" />,
-      href: "#",
-      label: "Email",
+      icon: <TikTokFilled className="text-xl" />,
+      href: "https://www.tiktok.com/@marak_501", // replace with your actual TikTok URL
+      label: "Tiktok",
     },
   ];
 
