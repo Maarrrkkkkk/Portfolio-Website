@@ -89,8 +89,9 @@ const Footer = () => {
             transition={{ duration: 0.8, delay: 0.4 }}
             viewport={{ once: true }}
           >
-            <Paragraph className="text-gray-400 text-sm flex items-center justify-center gap-2">
-              <span>© {new Date().getFullYear()} Mark Anthony.</span>
+            <Paragraph className="text-gray-400 text-sm flex items-center justify-center gap-1">
+              <span>© {new Date().getFullYear()} Mark Anthony</span>
+              <span className="mx-1">|</span>
               <span>All rights reserved.</span>
             </Paragraph>
           </motion.div>
