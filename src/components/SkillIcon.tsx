@@ -6,7 +6,7 @@ const SkillIcon = ({ name, logo }) => {
       <img
         src={logo}
         alt={`${name} logo`}
-        className="w-16 h-16 object-contain mb-2"
+        className="w-8 h-8 object-contain mb-2"
         onError={(e) => {
           e.target.onerror = null;
           e.target.src = "https://via.placeholder.com/48"; // fallback icon
