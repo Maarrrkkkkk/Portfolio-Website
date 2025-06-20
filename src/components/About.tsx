@@ -38,9 +38,7 @@ const About = () => {
     },
   ];
 
-  // Skills and Technologies (Sorted & Grouped)
   const skills = [
-    // Frontend
     {
       name: "Ant Design",
       logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/antdesign/antdesign-original.svg",
@@ -54,6 +52,14 @@ const About = () => {
       logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg",
     },
     {
+      name: "Django",
+      logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg",
+    },
+    {
+      name: "Git",
+      logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg",
+    },
+    {
       name: "HTML5",
       logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg",
     },
@@ -62,34 +68,20 @@ const About = () => {
       logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
     },
     {
+      name: "PHP",
+      logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg",
+    },
+    {
       name: "React",
       logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
     },
     {
-      name: "Tailwind CSS",
-      logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg",
-    },
-
-    // Backend
-    {
-      name: "Django",
-      logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg",
-    },
-    {
-      name: "PHP",
-      logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg",
-    },
-
-    // Database
-    {
       name: "SQLite",
       logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sqlite/sqlite-original.svg",
     },
-
-    // Tools
     {
-      name: "Git",
-      logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg",
+      name: "Tailwind CSS",
+      logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg",
     },
     {
       name: "Vite",
@@ -99,7 +91,7 @@ const About = () => {
 
   return (
     <section id="about" className="py-20 bg-slate-900 relative overflow-hidden">
-      {/* Background Illustration */}
+      {/* Background Effects */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute top-20 left-10 w-32 h-32 bg-gradient-to-r from-emerald-500 to-cyan-500 rounded-full blur-3xl"></div>
         <div className="absolute bottom-20 right-10 w-40 h-40 bg-gradient-to-r from-cyan-500 to-emerald-500 rounded-full blur-3xl"></div>
@@ -107,6 +99,7 @@ const About = () => {
       </div>
 
       <div className="container mx-auto px-6 relative z-10">
+        {/* About Header */}
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -120,7 +113,7 @@ const About = () => {
           >
             About Me
           </Title>
-          <Paragraph className="text-xl text-slate-300 max-w-3xl mx-auto font-poppins rounded-xl  p-6 ">
+          <Paragraph className="text-xl text-slate-300 max-w-3xl mx-auto font-poppins rounded-xl p-6">
             I'm a passionate{" "}
             <span className="text-emerald-400 font-semibold">
               Front-End Developer
@@ -134,6 +127,7 @@ const About = () => {
           </Paragraph>
         </motion.div>
 
+        {/* Services */}
         <Row gutter={[24, 24]} className="mb-16">
           {services.map((service, index) => (
             <Col xs={24} md={12} lg={6} key={index}>
@@ -170,10 +164,10 @@ const About = () => {
           ))}
         </Row>
 
+        {/* Skills Section */}
         <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+          initial="hidden"
+          whileInView="visible"
           viewport={{ once: true }}
           className="text-center"
         >
@@ -183,15 +177,19 @@ const About = () => {
           >
             Skills & Technologies
           </Title>
+
           <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-6 gap-6">
             {skills.map((skill, index) => (
               <motion.div
                 key={skill.name}
-                initial={{ opacity: 0, scale: 0.8 }}
+                initial={{ opacity: 0, scale: 0.9 }}
                 whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                whileHover={{ scale: 1.05 }}
+                transition={{ duration: 0.6, delay: index * 0.2 }}
+                whileHover={{
+                  scale: 1.05,
+                  boxShadow: "0 0 25px rgba(16, 185, 129, 0.3)",
+                }}
+                className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-4 hover:border-emerald-400/50 transition-all duration-300 hover:bg-white/10"
               >
                 <SkillIcon name={skill.name} logo={skill.logo} />
               </motion.div>
