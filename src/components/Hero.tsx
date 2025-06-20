@@ -69,7 +69,9 @@ const Hero = () => {
             transition={{ delay: 0.3, duration: 0.8 }}
           >
             <Paragraph className="text-xl md:text-2xl text-slate-300 mb-8 max-w-3xl mx-auto font-poppins">
-              🚀 Aspiring Front-End Developer — 🎓 BSIT Graduate
+              <strong>
+                <em>Front-End Developer</em>
+              </strong>
             </Paragraph>
           </motion.div>
 

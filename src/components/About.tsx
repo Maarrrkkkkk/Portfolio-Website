@@ -140,7 +140,7 @@ const About = () => {
                 className="h-full"
               >
                 <Card
-                  className="h-full min-h-[320px] flex flex-col justify-center"
+                  className="h-full min-h-[200px] flex flex-col justify-center"
                   bodyStyle={{
                     display: "flex",
                     flexDirection: "column",
