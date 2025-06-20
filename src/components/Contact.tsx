@@ -87,6 +87,11 @@ const Contact = () => {
                     name="_next"
                     value="https://markanthonyaguirre-portfolio.vercel.app/#contact"
                   />
+                  <input
+                    type="hidden"
+                    name="_subject"
+                    value="New Message from Portfolio Contact Form"
+                  />
 
                   <label className="text-white block">Name</label>
                   <Input
