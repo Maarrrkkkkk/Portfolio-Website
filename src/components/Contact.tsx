@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { Input, Button, Typography, Card, Row, Col } from "antd";
 import {
@@ -11,6 +12,8 @@ const { Title, Paragraph } = Typography;
 const { TextArea } = Input;
 
 const Contact = () => {
+  const [formSubmitted, setFormSubmitted] = useState(false);
+
   const contactInfo = [
     {
       icon: <MailOutlined className="text-2xl text-emerald-400" />,
@@ -76,6 +79,19 @@ const Contact = () => {
             >
               <Card className="bg-white/5 backdrop-blur-sm border-white/10 hover:bg-white/10 transition-all duration-300">
                 <form
+                  onSubmit={(e) => {
+                    e.preventDefault();
+                    const form = e.target as HTMLFormElement;
+                    const data = new FormData(form);
+                    fetch(form.action, {
+                      method: "POST",
+                      body: data,
+                      headers: { Accept: "application/json" },
+                    }).then(() => {
+                      form.reset();
+                      setFormSubmitted(true);
+                    });
+                  }}
                   action="https://formsubmit.co/markanthonyaguirre1234@gmail.com"
                   method="POST"
                   className="space-y-4"
@@ -84,13 +100,13 @@ const Contact = () => {
                   <input type="hidden" name="_template" value="table" />
                   <input
                     type="hidden"
-                    name="_next"
-                    value="https://markanthonyaguirre-portfolio.vercel.app/#contact"
+                    name="_subject"
+                    value="New Message from Portfolio Contact Form"
                   />
                   <input
                     type="hidden"
-                    name="_subject"
-                    value="New Message from Portfolio Contact Form"
+                    name="_next"
+                    value="https://markanthonyaguirre-portfolio.vercel.app/#contact"
                   />
 
                   <label className="text-white block">Name</label>
@@ -137,6 +153,12 @@ const Contact = () => {
                   >
                     Send Message 🚀
                   </Button>
+
+                  {formSubmitted && (
+                    <p className="text-emerald-400 text-sm mt-2 text-center">
+                      ✅ Thank you! Your message has been sent successfully.
+                    </p>
+                  )}
                 </form>
               </Card>
             </motion.div>
