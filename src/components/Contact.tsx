@@ -85,7 +85,7 @@ const Contact = () => {
                   <input
                     type="hidden"
                     name="_next"
-                    value="https://yourwebsite.com/#contact"
+                    value="https://markanthonyaguirre-portfolio.vercel.app/#contact"
                   />
 
                   <label className="text-white block">Name</label>
