@@ -82,7 +82,7 @@ const Hero = () => {
             transition={{ delay: 0.6, duration: 0.8 }}
           >
             <a
-              href="/markanthonyaguirre-cv.pdf" // Replace with the actual path to your PDF file
+              href="/markanthonyaguirre.pdf" // Replace with the actual path to your PDF file
               download
             >
               <Button
